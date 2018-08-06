@@ -8,22 +8,14 @@
   <body>
     <div class="login-page">
       <div class="form">
-        <div class="social-buttons">
-            <div><span>Anmelden</span> via</div>
-            <a href="/auth/facebook">
-              <img class="loginBtn" src="img/facebookLoginBtn.png" alt="Anmelden über Facebook">
-            </a>
-            <a href="/auth/twitter">
-              <img class="loginBtn" src="img/twitterLoginBtn.png" alt="Anmelden über Twitter">
-            </a>
-            <div><span>oder</span></div>
-        </div>
+      <h1>Fluzza</h1>
+
         <div style="margin-top: 18px;">
             <form action="/register" class="register-form" method="post" >
-              <h1>Erstelle ein neues Konto</h1>
-              <input type="text" name="username" placeholder="username"/>
-              <input type="password" name="password" placeholder="password"/>
-              <button type="submit">create</button>
+              <h2>Neues Konto erstellen</h2>
+              <input type="text" name="username" placeholder="E-Mail"/>
+              <input type="password" name="password" placeholder="Passwort"/>
+              <button type="submit">Registrieren</button>
               <p class="message">Bereits registriert? <a href="#">Anmelden</a></p>
               <% if (errors != null && showRegisterForm != null && showRegisterForm === true) { %>
                 <% errors.forEach(function(err){ %>
@@ -32,7 +24,7 @@
               <% } %>
             </form>
             <form action="/login" class="login-form" method="post">
-              <h1>Anmeldung über deine E-Mail Adresse</h1>
+              <h2>Anmeldung über deine E-Mail</h2>
               <input type="text" name="username" placeholder="E-Mail"/>
               <input type="password" name="password" placeholder="Passwort"/>
               <button type="submit">Anmelden</button>
@@ -45,6 +37,19 @@
                 <p class="message success"><%= success %></p>
               <% } %>
             </form>
+
+        </div>
+
+        <div class="social-buttons">
+            <h2>oder</h2>
+            <!--<div><span>Anmelden</span> via</div> -->
+            <a href="/auth/facebook">
+              <img class="loginBtn" src="img/facebookLoginBtn.png" alt="Anmelden über Facebook">
+            </a>
+            <a href="/auth/twitter">
+              <img class="loginBtn" src="img/twitterLoginBtn.png" alt="Anmelden über Twitter">
+            </a>
+            
         </div>
     </div> <!-- end form -->
     </div> <!-- end login container -->

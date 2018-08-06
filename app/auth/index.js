@@ -32,7 +32,7 @@ var init = function() {
             }
             if (!user) {
                 return done(null, false, {
-                    message: 'Incorrect username or password.'
+                    message: 'Falsche Email oder Passwort.'
                 });
             }
             user.validatePassword(password, function(err, isMatch) {
@@ -41,7 +41,7 @@ var init = function() {
                 }
                 if (!isMatch) {
                     return done(null, false, {
-                        message: 'Incorrect username or password.'
+                        message: 'Falsche Email oder Passwort.'
                     });
                 }
                 return done(null, user);

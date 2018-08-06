@@ -1,3 +1,3 @@
 'use strict';
-var siofu = require("socketio-file-upload");
-module.exports = siofu;
+var fileUpload = require("socketio-file-upload");
+module.exports = fileUpload;

@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 body {
-  background: #C5DDEB;
+  background: rgb(133, 133, 133);
   font-family: "Lato", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -57,7 +57,7 @@ body {
   width: 490px;
   float: left;
   background: #F2F5F8;
-  color: #434651;
+  color: #444753;
 }
 .chat .chat-header, .room .room-header {
   padding: 20px;
@@ -187,6 +187,7 @@ body {
   margin: 0 auto 100px;
   padding: 45px;
   text-align: center;
+  border-radius: 10px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 .form input {
@@ -194,7 +195,8 @@ body {
   outline: 0;
   background: #f2f2f2;
   width: 100%;
-  border: 0;
+  border: 1px solid #DDDDDD;
+  border-radius: 3px;
   margin: 0 0 15px;
   padding: 15px;
   box-sizing: border-box;
@@ -204,27 +206,29 @@ body {
   font-family: "Lato", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background: #86BB71;
-  width: 100%;
+  background: #444753;
   border: 0;
   padding: 15px;
   color: #FFFFFF;
   font-size: 14px;
   -webkit-transition: all 0.3 ease;
+  width: 92%;
   transition: all 0.3 ease;
   cursor: pointer;
 }
 .form button:hover,.form button:active,.form button:focus {
-  background: #89c771;
+  background: #5a5a5a;
 }
 .form .message, .room-create .message {
   margin: 15px 0 0;
-  color: #b3b3b3;
-  font-size: 12px;
+  color: black;
+  font-size: 15px;
 }
 .form .message a {
-  color: #86BB71;
+  color: black;
   text-decoration: none;
+  font-size: 17px;
+  font-weight: bold;
 }
 .form .register-form {
   display: none;
@@ -247,7 +251,6 @@ ul {
   padding: 12px 14px;
   line-height: 26px;
   font-size: 20px;
-  border-radius: 7px;
   margin-bottom: 10px;
   width: 90%;
   position: relative;
@@ -255,7 +258,7 @@ ul {
   text-align: center;
 }
 .room .room-list .room-item {
-  background: #86BB71;
+  background: #444753;
 }
 .room .room-list a {
   text-decoration: none;
@@ -267,10 +270,10 @@ ul {
   overflow-y: scroll;
 }
 .loginBtn {
-  width: 80%;
+  width: 95%;
 }
 .form {
-  background-color: #F2F5F8;
+  background-color: white;
 }
 .form input {
     background-color: white;
@@ -287,7 +290,8 @@ ul {
   float: right;
   text-transform: uppercase;
   outline: 0;
-  background: #86BB71;
+  border-radius: 3px;
+  background: #444753;
   border: 0;
   padding: 15px;
   color: #FFFFFF;
@@ -296,23 +300,53 @@ ul {
   transition: all 0.3 ease;
   cursor: pointer;
 }
+.chat-message.input {
+  border: 2px solid #FFFFFF;
+  border-radius: 3px;
+  display: block;
+  padding: 8px;
+  margin: 30px auto;
+  width: auto;
+}
+
 button:hover, button:active, button:focus {
-  background: #89c771;
+  background: #656a7c;
+}
+
+a.rooms-btn {
+  border: 2px solid #FFFFFF;
+  border-radius: 3px;
+  display: block;
+  padding: 8px;
+  margin: 30px auto;
+  width: auto;
+  
 }
 a.rooms-btn:hover, a.rooms-btn:active, a.rooms-btn:focus {
-  background: #89c771;
+  background: #656a7c;
+  border: 2px solid #FFFFFF;
+  border-radius: 3px;
 }
 a.history-btn:hover, a.rooms-btn:active, a.rooms-btn:focus {
-  background: #89c771;
+  border: 2px solid #FFFFFF;
+  border-radius: 3px;
+  background: #656a7c;
 }
 a.logout-btn{
-  background-color: rgb(226, 98, 92);
+  border: 2px solid #FFFFFF;
+  border-radius: 3px;
+  background-color: #444753;
+  display: block;
+  padding: 8px;
+  margin: 30px auto;
+  width: auto;
 }
 a.logout-btn:hover, a.logout-btn:active, a.logout-btn:focus {
   background-color: rgb(245, 106, 99);
 }
 .controls {
   width: 270px;
+  height: 70px;
   float: left;
   margin: 0;
   text-align: center;
@@ -384,4 +418,28 @@ a.logout-btn:hover, a.logout-btn:active, a.logout-btn:focus {
 }
 .my-message img {
    max-width: 100%;
+}
+
+/*login form*/
+.login_form {height: 400px;}
+.login_form a i {
+  padding: 0px 10px 0px 0px;
+}
+.login_form a, .login_form a:hover {
+  margin: 10px 30px;
+  width: 240px;
+  border-radius: 3px;
+  padding: 10px;
+}
+.none {top: -150%; transition: 0.3s linear;}
+.close_window {
+  display: block;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.close_window:hover {
+  color: #E51616;
 }
