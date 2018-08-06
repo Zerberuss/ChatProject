@@ -1,0 +1,11 @@
+# Node Dependencies
+node_modules
+
+# Logs
+debug.log
+
+# grunt runner
+GruntFile.js
+
+# Config
+app/config/config.json
