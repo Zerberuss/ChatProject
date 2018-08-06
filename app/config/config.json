@@ -22,7 +22,7 @@
   "twitter": {
     "consumerKey": "uejIbsG7fi5VMX65znC2GhiJB",
     "consumerSecret": "KiYJACjwMHa5V9x9xScK4BF6CkR3PZSqaKH8xQ913AV5gQtt8t",
-    "callbackURL": "/auth/twitter",
+    "callbackURL": "/auth/twitter/callback",
     "profileFields": [
       "id",
       "displayName",
