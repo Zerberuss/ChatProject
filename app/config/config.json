@@ -1,27 +1,31 @@
 {
-	"db": {
-		"username": "<MongoDBUsername>",
-		"password": "<MongoDBPassword>",
-		"host": "<MongoDBHost>",
-		"port": "<MongoDBPort>",
-		"name": "<MongoDBName>"
-	},
-	"sessionSecret": "<RandomString>",
-	"facebook": {
-		"clientID": "<AppID>",
-		"clientSecret": "<AppSecret>",
-		"callbackURL": "/auth/facebook/callback",
-		"profileFields": ["id", "displayName", "photos"]
-	},
-	"twitter": {
-		"consumerKey": "<ConsumerKey>",
-		"consumerSecret": "<ConsumerSecret>",
-		"callbackURL": "/auth/twitter/callback",
-		"profileFields": ["id", "displayName", "photos"]
-	},
-	"redis": {
-		"host": "127.0.0.1",
-		"port": 6379,
-		"password": ""
-	}
+  "dbURI": "127.0.0.1",
+  "sessionSecret": "aaaaaa",
+  "defaultHistoryMessagesLimit": 10,
+  "uploadsDir": "uploads",
+  "facebook": {
+    "clientID": "1001660296682862",
+    "clientSecret": "a18c5e3dbad3ed1e763df20c82e5953e",
+    "callbackURL": "/auth/facebook/callback",
+    "profileFields": [
+      "id",
+      "displayName",
+      "photos"
+    ]
+  },
+  "twitter": {
+    "consumerKey": "uejIbsG7fi5VMX65znC2GhiJB",
+    "consumerSecret": "KiYJACjwMHa5V9x9xScK4BF6CkR3PZSqaKH8xQ913AV5gQtt8t",
+    "callbackURL": "http://127.0.0.1:3000/auth/twitter",
+    "profileFields": [
+      "id",
+      "displayName",
+      "photos"
+    ]
+  },
+  "redis": {
+    "host": "127.0.0.1",
+    "port": 6379,
+    "password": ""
+  }
 }
