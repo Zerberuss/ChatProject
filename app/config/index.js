@@ -1,4 +1,4 @@
-'user strict';
+'use strict';
 var init = function() {
     if (process.env.NODE_ENV === 'production') {
         var redisURI = require('url').parse(process.env.REDIS_URL);
