@@ -1,13 +1,13 @@
 {
   "db": {
-		"username": "<MongoDBUsername>",
-		"password": "<MongoDBPassword>",
-		"host": "<MongoDBHost>",
-		"port": "<MongoDBPort>",
-		"name": "<MongoDBName>"
+		"username": "mongoadmin",
+		"password": "mongoadmin",
+		"host": "127.0.0.1",
+		"port": "27017",
+		"name": "admin"
 	},
   "sessionSecret": "aaaaaa",
-  "defaultHistoryMessagesLimit": 10,
+  "defaultHistoryMessagesLimit": 1000,
   "uploadsDir": "uploads",
   "facebook": {
     "clientID": "1001660296682862",
@@ -22,7 +22,7 @@
   "twitter": {
     "consumerKey": "uejIbsG7fi5VMX65znC2GhiJB",
     "consumerSecret": "KiYJACjwMHa5V9x9xScK4BF6CkR3PZSqaKH8xQ913AV5gQtt8t",
-    "callbackURL": "http://127.0.0.1:3000/auth/twitter",
+    "callbackURL": "/auth/twitter",
     "profileFields": [
       "id",
       "displayName",
