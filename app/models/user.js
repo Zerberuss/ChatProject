@@ -15,21 +15,26 @@ var findById = function(id, callback) {
      * This method is used ONLY to find user accounts registered via Social Authentication.
      *
      */
-var findOrCreate = function(data, callback) {
-        findOne({
-            'socialId': data.id
-        }, function(err, user) {
-            if (err) {
-                return callback(err);
-            }
-            if (user) {
+    var findOrCreate = function(data, callback){
+        findOne({'socialId': data.id}, function(err, user){
+            if(err) { return callback(err); }
+            if(user){
                 return callback(err, user);
             } else {
-                create({
+                var userData = {
                     username: data.displayName,
                     socialId: data.id,
                     picture: data.photos[0].value || null
-                }, function(err, newUser) {
+                };
+    
+                // To avoid expired Facebook CDN URLs
+                // Request user's profile picture using user id 
+                // @see http://stackoverflow.com/a/34593933/6649553
+                if(data.provider == "facebook" && userData.picture){
+                    userData.picture = "http://graph.facebook.com/" + data.id + "/picture?type=large";
+                }
+    
+                create(userData, function(err, newUser){
                     callback(err, newUser);
                 });
             }
