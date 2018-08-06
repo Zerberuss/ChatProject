@@ -1,5 +1,11 @@
 {
-  "dbURI": "127.0.0.1",
+  "db": {
+		"username": "<MongoDBUsername>",
+		"password": "<MongoDBPassword>",
+		"host": "<MongoDBHost>",
+		"port": "<MongoDBPort>",
+		"name": "<MongoDBName>"
+	},
   "sessionSecret": "aaaaaa",
   "defaultHistoryMessagesLimit": 10,
   "uploadsDir": "uploads",
