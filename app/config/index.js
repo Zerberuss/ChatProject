@@ -28,7 +28,7 @@ var init = function() {
                 consumerKey: process.env.instagramClientID,
                 consumerSecret: process.env.instagramConsumerSecret,
                 callbackURL: "/auth/instagram/callback",
-                profileFields: ['id', 'displayName']
+                profileFields: ['id', 'displayName', 'photos']
             },
             redis: {
                 host: redisURI.hostname,

@@ -20,3 +20,4 @@ GruntFile.js
 \.vscode/
 
 public/uploads/
+package-lock\.json
