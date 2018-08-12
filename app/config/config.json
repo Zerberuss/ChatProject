@@ -29,6 +29,16 @@
       "photos"
     ]
   },
+  "instagram": {
+    "clientID": "1b9f1fd8fd194884aea5008ff5d08d04",
+    "clientSecret": "f9fe5e78a1f84bb9923cd876d69b3a7e",
+    "callbackURL": "/auth/instagram/callback",
+    "profileFields": [
+      "id",
+      "displayName",
+      "photos"
+    ]
+  },
   "redis": {
     "host": "127.0.0.1",
     "port": 6379,

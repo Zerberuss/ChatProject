@@ -1,6 +1,6 @@
 'use strict';
 var init = function() {
-    if (process.env.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV === 'debug') {
         var redisURI = require('url').parse(process.env.REDIS_URL);
         var redisPassword = redisURI.auth.split(':')[1];
         return {
@@ -22,6 +22,12 @@ var init = function() {
                 consumerKey: process.env.twitterConsumerKey,
                 consumerSecret: process.env.twitterConsumerSecret,
                 callbackURL: "/auth/twitter/callback",
+                profileFields: ['id', 'displayName', 'photos']
+            },
+            instagram: {
+                consumerKey: process.env.instagramClientID,
+                consumerSecret: process.env.instagramConsumerSecret,
+                callbackURL: "/auth/instagram/callback",
                 profileFields: ['id', 'displayName', 'photos']
             },
             redis: {

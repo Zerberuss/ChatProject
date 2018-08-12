@@ -69,6 +69,13 @@ router.get('/auth/twitter/callback', passport.authenticate('twitter', {
     failureRedirect: '/',
     failureFlash: true
 }));
+// 3. Login via Instagram
+router.get('/auth/instagram', passport.authenticate('instagram'));
+router.get('/auth/instagram/callback', passport.authenticate('instagram', {
+    successRedirect: '/rooms',
+    failureRedirect: '/',
+    failureFlash: true
+}));
 // Rooms
 router.get('/rooms', [User.isAuthenticated, function(req, res, next) {
     Room.find(function(err, rooms) {

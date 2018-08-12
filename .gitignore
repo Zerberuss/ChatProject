@@ -12,3 +12,11 @@ GruntFile.js
 
 
 *.jpg
+
+*.opdownload
+
+*.pdf
+
+\.vscode/
+
+public/uploads/
