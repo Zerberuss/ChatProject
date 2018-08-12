@@ -7,7 +7,7 @@
 		"name": "admin"
 	},
   "sessionSecret": "aaaaaa",
-  "defaultHistoryMessagesLimit": 1000,
+  "defaultHistoryMessagesLimit": 200,
   "uploadsDir": "uploads",
   "facebook": {
     "clientID": "1001660296682862",
@@ -31,12 +31,11 @@
   },
   "instagram": {
     "clientID": "1b9f1fd8fd194884aea5008ff5d08d04",
-    "clientSecret": "f9fe5e78a1f84bb9923cd876d69b3a7e",
     "callbackURL": "/auth/instagram/callback",
+    "clientSecret": "391d749361744d139636b1e8f56c773a",
     "profileFields": [
       "id",
       "displayName",
-      "photos"
     ]
   },
   "redis": {

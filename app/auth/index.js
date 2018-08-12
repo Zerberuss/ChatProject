@@ -59,7 +59,7 @@ var init = function() {
             return done(err, user);
         });
     };
-    // Plug-in Facebook & Twitter Strategies
+    // Plug-in Facebook, Twitter adn Insta Strategies
     passport.use(new FacebookStrategy(config.facebook, verifySocialAccount));
     passport.use(new TwitterStrategy(config.twitter, verifySocialAccount));
     passport.use(new InstagramStrategy(config.instagram, verifySocialAccount));
