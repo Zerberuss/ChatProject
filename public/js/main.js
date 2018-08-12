@@ -55,24 +55,30 @@ var app = {
                     };
                     socket.emit('newMessage', roomId, message);
                     textareaEle.val('');
-                    app.helpers.addMessage(message);
+                    app.helpers.addMessage(message, false);
                 }
             });
             // Print received message history
             socket.on('history', function (data) {
                 var i = data.messages.length || 0;
-                while(i--) {
-                    app.helpers.addMessage(data.messages[i]);
+                const v = i*200;
+                var disableScroll = true;
+                while (i--) {
+                    app.helpers.addMessage(data.messages[i], disableScroll);
                 }
+                //$(".chat-history").prop({ scrollTop: v });
+                $(".chat-history").animate({
+                    scrollTop: v
+                }, 1000);
             });
             // Wheneven a user hits this button,
             // the full room history will be shown in overlay
             $('.history-btn').on('click', function (e) {
-                if($('#history-overlay').length === 0){
+                if ($('#history-overlay').length === 0) {
                     $(document.body).append('<div id="history-overlay"></div>');
                 }
                 $('#history-overlay').html('<ul></ul>');
-                $('#history-overlay').on('click', function(){
+                $('#history-overlay').on('click', function () {
                     $(this).remove();
                 });
                 socket.emit('historyRequest', roomId);
@@ -91,15 +97,15 @@ var app = {
             });
             // Append a new message
             socket.on('addMessage', function (message) {
-                app.helpers.addMessage(message);
+                app.helpers.addMessage(message, false);
             });
 
             // Initiate uploader support
             var uploader = new SocketIOFileUpload(socket);
-                uploader.listenOnInput(document.getElementById('siofu_input'));
-                uploader.addEventListener('start', function(event){
-                    event.file.meta.userName = username;
-                });
+            uploader.listenOnInput(document.getElementById('siofu_input'));
+            uploader.addEventListener('start', function (event) {
+                event.file.meta.userName = username;
+            });
             // Upload started
             socket.on('fileUploadStarted', function () {
                 app.helpers.addSystemMessage('fa-spinner fa-spin', 'File upload started');
@@ -117,7 +123,7 @@ var app = {
                 app.helpers.addMessage(message);
             });
             // Clean system messages on click
-            $('#clientMessages ul').on('click', function(){
+            $('#clientMessages ul').on('click', function () {
                 $(this).html('');
             });
 
@@ -168,7 +174,7 @@ var app = {
             this.updateNumOfUsers();
         },
         // Adding a new message to chat history
-        addMessage: function (message) {
+        addMessage: function (message, animation) {
             message.date = (new Date(message.date)).toLocaleString();
             message.username = this.encodeHTML(message.username);
             message.content = message.noescape === true ? message.content : this.encodeHTML(message.content);
@@ -182,9 +188,11 @@ var app = {
                   </li>`;
             $(html).hide().appendTo('.chat-history ul').slideDown(200);
             // Keep scroll bar down
-            $(".chat-history").animate({
-                scrollTop: $('.chat-history')[0].scrollHeight
-            }, 1000);
+            if (!animation) {
+                $(".chat-history").animate({
+                    scrollTop: $('.chat-history')[0].scrollHeight
+                }, 1000);
+            } 
         },
         // Adding a new message to chat history in the overlay
         addOverlayMessage: function (message) {
@@ -201,6 +209,7 @@ var app = {
                   </li>`;
             $(html).hide().appendTo('#history-overlay ul').slideDown(200);
             // Keep scroll bar down
+
             $("#history-overlay").animate({
                 scrollTop: $('#history-overlay')[0].scrollHeight
             }, 1000);
@@ -213,7 +222,7 @@ var app = {
                     <i class="fa-li fa ${icon}"></i>${messageText}
                 </li>`;
             $('#clientMessages ul').append(html);
-            setTimeout(function(){$('#clientMessages ul').html('');}, 5000);
+            setTimeout(function () { $('#clientMessages ul').html(''); }, 5000);
         },
         // Update number of rooms
         // This method MUST be called after adding a new room
