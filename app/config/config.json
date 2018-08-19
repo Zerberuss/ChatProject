@@ -1,10 +1,10 @@
 {
   "db": {
-		"username": "mongoadmin",
-		"password": "mongoadmin",
+		"username": "fluzza",
+		"password": "fluzza*2018",
 		"host": "127.0.0.1",
 		"port": "27017",
-		"name": "admin"
+		"name": "fluzza"
 	},
   "sessionSecret": "aaaaaa",
   "defaultHistoryMessagesLimit": 200,

@@ -1,0 +1,17 @@
+{
+    "src": "mongodb://localhost:27017/fluzza",
+    "dist": "mysql://root:@localhost:3306/fluzza",
+    "prefix": "",
+    "case": "camel",
+    "collections": {
+        "users": {
+            "_id": "string",            
+            "username": "string",
+            "picture": "string",
+            "socialId": "string",
+            "password": "string",
+            "updatedAt": "DATETIME",
+            "createdAt": "DATETIME"
+        }
+    }
+  }

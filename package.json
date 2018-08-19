@@ -25,6 +25,7 @@
     "express": "^4.14.0",
     "express-session": "^1.14.0",
     "file-type": "^3.8.0",
+    "momy": "^0.7.0",
     "mongoose": "^5.2.9",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
