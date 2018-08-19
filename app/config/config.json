@@ -6,7 +6,7 @@
 		"port": "27017",
 		"name": "fluzza"
 	},
-  "sessionSecret": "aaaaaa",
+  "sessionSecret": "fluzzaaaaaaa",
   "defaultHistoryMessagesLimit": 200,
   "uploadsDir": "uploads",
   "facebook": {

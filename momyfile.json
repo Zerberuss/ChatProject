@@ -12,6 +12,11 @@
             "password": "string",
             "updatedAt": "DATETIME",
             "createdAt": "DATETIME"
+        },
+        "sessions": {
+            "_id": "string",
+            "session": "string",
+            "expires": "DATETIME"
         }
     }
   }
