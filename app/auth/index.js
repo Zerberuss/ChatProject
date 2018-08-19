@@ -9,13 +9,6 @@ var InstagramStrategy  = require('passport-instagram').Strategy;
 var User             = require('../models/user');
 var mysql            = require('mysql');
 
-var connection = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : ''
-  });
-  connection.query('USE fluzza');
-
 /**
  * Encapsulates all code for authentication
  * Either by using username and password, or by using social accounts
