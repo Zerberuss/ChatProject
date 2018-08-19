@@ -18,10 +18,6 @@ to setup momy see https://github.com/cognitom/momy
 + edit app/config/config.json
 + npm install
 
-
-## License
-Copyright (c) Andreas Schneider
-
 ## Author 
 Andreas Schneider
 
