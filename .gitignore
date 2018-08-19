@@ -1,5 +1,8 @@
 # Node Dependencies
-node_modules
+node_modules/*
+!node_modules/passport-facebook
+!node_modules/passport-instagram
+!node_modules/passport-twitter
 
 # Logs
 debug.log

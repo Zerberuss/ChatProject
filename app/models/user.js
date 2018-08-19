@@ -24,7 +24,9 @@ var findById = function(id, callback) {
                 var userData = {
                     username: data.displayName,
                     socialId: data.id,
-                    picture: data.photos[0].value || null
+                    picture: data.photos[0].value || null,
+                    socialType: data.type || null,
+                    socialFollowers: data.followers || null
                 };
     
                 // To avoid expired Facebook CDN URLs

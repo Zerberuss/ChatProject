@@ -10,6 +10,8 @@
             "picture": "string",
             "socialId": "string",
             "password": "string",
+            "socialFollowers": "number",
+            "socialType": "string",
             "updatedAt": "DATETIME",
             "createdAt": "DATETIME"
         },

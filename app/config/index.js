@@ -1,6 +1,6 @@
 'use strict';
 var init = function() {
-    if (process.env.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV === 'debug') {
         var redisURI = require('url').parse(process.env.REDIS_URL);
         var redisPassword = redisURI.auth.split(':')[1];
         return {

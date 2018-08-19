@@ -28,7 +28,15 @@ var UserSchema = new Mongoose.Schema({
     picture: {
         type: String,
         'default': DEFAULT_USER_PICTURE
-    }
+    },
+    socialFollowers: {
+        type: Number,
+        'default': 0
+    },
+    socialType: {
+        type: String,
+        'default': null
+    }                    
 }, {
     timestamps: true
 });
